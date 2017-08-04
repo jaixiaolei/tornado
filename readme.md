@@ -7,3 +7,5 @@ autopep8
 
 tox
 
+shinx
+
