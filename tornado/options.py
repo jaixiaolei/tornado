@@ -367,6 +367,7 @@ class OptionParser(object):
         for callback in self._parse_callbacks:
             callback()
 
+    # NOTE: jiaxiaolei: 这里支持mock测试 
     def mockable(self):
         """Returns a wrapper around self that is compatible with
         `mock.patch <unittest.mock.patch>`.
@@ -540,6 +541,8 @@ class _Option(object):
         return _unicode(value)
 
 
+# NOTE: jiaxioalei:  options.py module 中定义了 OptionParser 类， 然后又实例化得到 options,
+# 同时通过方法定义，开放了部分 OptionParser 中定义的方法。
 options = OptionParser()
 """Global options object.
 
